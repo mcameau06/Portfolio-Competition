@@ -60,6 +60,7 @@ def process_ticker(ticker: yf.Ticker):
         ticker_data = {
             'Symbol': info.get('symbol'),
             'Name': info.get('longName'),
+            'Sector': info.get('sector'),
             'Price to Earnings': metrics[0],
             'Price to Book': metrics[1],
             'Earnings Yield': metrics[2],
@@ -82,7 +83,7 @@ if __name__ == "__main__":
 
     all_metrics = []
     
-    with ThreadPoolExecutor(max_workers=2) as executor:
+    with ThreadPoolExecutor(max_workers=2 ) as executor:
         futures = [executor.submit(process_ticker, t) for t in all_tickers]
 
         for future in as_completed(futures):
