@@ -15,10 +15,11 @@ def get_metrics(ticker:yf.Ticker):
     # value
     price_to_earnings = info.get('forwardPE')
     price_to_book = info.get('priceToBook')
-    earnings_yield = 1 / price_to_earnings
     if price_to_earnings == 0:
         earnings_yield = 0
-    # momentum
+    earnings_yield = 1 / price_to_earnings
+    
+    # momentum and volatility
     momentum_3m, momentum_6m, volatility_daily, volatility_annual = get_momentum(ticker)
 
     #quality
