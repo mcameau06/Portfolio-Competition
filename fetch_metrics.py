@@ -94,7 +94,7 @@ def create_metrics_df(tickers_file_path:str) -> pd.DataFrame :
 
     print("Downloading metrics for all tickers")
 
-    with ThreadPoolExecutor(max_workers=4 ) as executor:
+    with ThreadPoolExecutor(max_workers=2 ) as executor:
         futures = [executor.submit(process_ticker, t) for t in all_tickers]
 
         for future in as_completed(futures):
