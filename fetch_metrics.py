@@ -69,7 +69,7 @@ def process_ticker(ticker: yf.Ticker):
             'Volatility_Daily': metrics[8],
             'Volatility_Annual': metrics[9],
         }
-        print(f"Downloaded metrics for {info.get('symbol')}")
+        #print(f"Downloaded metrics for {info.get('symbol')}")
         return ticker_data
     except Exception as e:
         # Optional: log and skip failures
