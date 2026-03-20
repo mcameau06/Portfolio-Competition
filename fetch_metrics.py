@@ -104,6 +104,8 @@ def create_metrics_df(tickers_file_path:str) -> pd.DataFrame :
 
     df = pd.DataFrame(all_metrics)
     df = df.sort_values(by=['Sector'])
+    
+    print("Finished Loading Metrics")
 
     return df
     
